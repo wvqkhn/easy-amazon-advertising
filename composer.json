@@ -1,27 +1,29 @@
 {
-    "name": "mystudytime/amazon-advertising",
-    "description": "Amazon Advertising API Client Library",
-    "type": "library",
-    "require": {
-        "php": ">=7.2.0",
-        "guzzlehttp/guzzle": "^6.5@dev"
-    },
-    "keywords": [
-        "amazon",
-        "Advertising",
-        "sdk",
-        "library"
-    ],
-    "autoload": {
-        "psr-4": {
-            "Mystudytime\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "bai he",
-            "email": "b_aihe@163.com"
-        }
-    ],
-    "minimum-stability": "dev"
+  "name": "mystudytime/amazon-advertising",
+  "description": "Amazon Advertising API Client Library",
+  "type": "library",
+  "require": {
+    "php": ">=7.2.0",
+    "guzzlehttp/guzzle": "^6.5@dev",
+    "pimple/pimple": "~3.0"
+  },
+  "keywords": [
+    "amazon",
+    "Advertising",
+    "sdk",
+    "library",
+    "easyAmazonAdv"
+  ],
+  "autoload": {
+    "psr-4": {
+      "easyAmazonAdv\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "bai he",
+      "email": "b_aihe@163.com"
+    }
+  ],
+  "minimum-stability": "dev"
 }
