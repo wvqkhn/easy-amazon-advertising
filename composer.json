@@ -1,6 +1,7 @@
 {
-  "name": "mystudytime/easy-amazon-advertising",
-  "description": "Amazon Advertising API V2 Client Library",
+  "name": "mystudytime/amazon-advertising",
+  "description": "Amazon Advertising API Client Library",
+  "license": "MIT",
   "type": "library",
   "require": {
     "php": ">=7.2.0",
@@ -27,5 +28,11 @@
       "email": "b_aihe@163.com"
     }
   ],
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  }
 }
