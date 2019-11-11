@@ -1,10 +1,8 @@
 <?php
 
-
 namespace easyAmazonAdv\Kernel\Exceptions;
 
-
-class RuntimeException extends \Exception
+class RuntimeException extends Exception
 {
 
 }

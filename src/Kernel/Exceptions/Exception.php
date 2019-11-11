@@ -1,10 +1,10 @@
 <?php
 
-
 namespace easyAmazonAdv\Kernel\Exceptions;
 
+use Exception as BaseException;
 
-class Exception
+class Exception extends BaseException
 {
 
 }

@@ -4,7 +4,7 @@
 namespace easyAmazonAdv\Kernel\Exceptions;
 
 
-class HttpException
+class HttpException extends Exception
 {
 
 }

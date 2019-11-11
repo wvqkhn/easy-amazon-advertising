@@ -1,19 +1,19 @@
 <?php
 
-
 namespace easyAmazonAdv\SponsoredProducts;
 
-use easyAmazonAdv\Kernel\Provider\ClientServiceProvider;
-use easyAmazonAdv\Kernel\Provider\ConfigServiceProvider;
+use easyAmazonAdv\Kernel\Provider\HttpClientServiceProvider;
 use easyAmazonAdv\Kernel\Support\Collection;
+use easyAmazonAdv\SponsoredProducts\Common\ServiceProvider;
 use Pimple\Container;
 
 
 class Application extends Container
 {
     protected $providers = [
+        HttpClientServiceProvider::class,
         business\ServiceProvider::class,
-        ClientServiceProvider::class,
+        ServiceProvider::class
     ];
 
     public function __construct($config = [], array $values = [])

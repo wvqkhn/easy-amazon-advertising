@@ -4,7 +4,7 @@
 namespace easyAmazonAdv\Kernel\Exceptions;
 
 
-class InvalidArgumentException
+class InvalidArgumentException extends Exception
 {
 
 }

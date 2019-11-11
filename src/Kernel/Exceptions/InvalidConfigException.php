@@ -4,7 +4,7 @@
 namespace easyAmazonAdv\Kernel\Exceptions;
 
 
-class InvalidConfigException
+class InvalidConfigException extends Exception
 {
 
 }

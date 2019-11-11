@@ -4,7 +4,7 @@
 namespace easyAmazonAdv\Kernel\Exceptions;
 
 
-class BadRequestException
+class BadRequestException extends Exception
 {
 
 }
