@@ -2,7 +2,6 @@
 
 namespace easyAmazonAdv\SponsoredProducts\Common;
 
-
 use easyAmazonAdv\Kernel\BaseClient;
 
 class Client extends BaseClient
@@ -99,5 +98,10 @@ class Client extends BaseClient
     public function getPortfolioEx(string $portfolioId)
     {
         return $this->httpGet('/portfolios/extended/' . $portfolioId);
+    }
+
+    public function listTargetingClauses(array $params = [])
+    {
+        return $this->httpGet('/sp/targets', $params);
     }
 }

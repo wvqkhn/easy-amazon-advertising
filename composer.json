@@ -1,14 +1,12 @@
 {
   "name": "mystudytime/amazon-advertising",
   "description": "Amazon Advertising API Client Library",
-  "license": "MIT",
   "type": "library",
+  "license": "MIT",
   "require": {
     "php": ">=7.2.0",
     "guzzlehttp/guzzle": "^6.5@dev",
-    "pimple/pimple": "~3.0",
-    "phpunit/phpunit": "^8.5@dev",
-    "mockery/mockery": "^1.2@dev"
+    "pimple/pimple": "~3.0"
   },
   "keywords": [
     "amazon",

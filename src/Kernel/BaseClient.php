@@ -29,12 +29,6 @@ class BaseClient
 
     public $profileId;
 
-    /**
-     * BaseClient constructor.
-     * @param $app
-     * @throws InvalidArgumentException
-     * @throws InvalidConfigException
-     */
     public function __construct($app)
     {
         $this->app    = $app;
@@ -128,7 +122,7 @@ class BaseClient
     {
         $client   = new \GuzzleHttp\Client();
         $response = $client->request($requestType, $url, $options);
-        if ($response->getStatusCode() != 200) {
+        if (!in_array($response->getStatusCode(), [200, 207])) {
             throw new HttpException($response->getBody());
         }
         echo $response->getBody();
@@ -149,6 +143,7 @@ class BaseClient
     {
         $headers = [
             'Authorization'                   => 'bearer ' . $this->config['accessToken'],
+            'Content-Type'                    => 'application/json',
             'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
         ];
         if (!empty($this->profileId)) {
@@ -156,6 +151,31 @@ class BaseClient
         }
         return $this->request($this->apiEndpoint . $url, 'GET', ['query' => $data, 'headers' => $headers]);
     }
+
+    /**
+     * httpPostJson
+     * @param string $url
+     * @param array $data
+     * @param array $query
+     * @return mixed
+     * @throws HttpException
+     *
+     * @author  baihe <baihe@guahao.com>
+     * @date    2019-11-12 14:19
+     */
+    public function httpPostJson(string $url, array $data = [], array $query = [])
+    {
+        $headers = [
+            'Authorization'                   => 'bearer ' . $this->config['accessToken'],
+            'Content-Type'                    => 'application/json',
+            'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
+        ];
+        if (!empty($this->profileId)) {
+            $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
+        }
+        return $this->request($this->apiEndpoint . $url, 'POST', ['query' => $query, 'json' => $data, 'headers' => $headers]);
+    }
+
 
     /**
      * httpPost
@@ -166,18 +186,43 @@ class BaseClient
      * @throws HttpException
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 00:32\
+     * @date    2019-11-12 00:32
      */
-    public function httpPost(string $url, array $data = [])
+    public function httpPut(string $url, array $data = [])
     {
         $headers = [
             'Authorization'                   => 'bearer ' . $this->config['accessToken'],
+            'Content-Type'                    => 'application/json',
             'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
         ];
         if (!empty($this->profileId)) {
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
-        return $this->request($this->apiEndpoint . $url, 'POST', ['form_params' => $data, 'headers' => $headers]);
+        return $this->request($this->apiEndpoint . $url, 'PUT', ['form_params' => $data, 'headers' => $headers]);
+    }
+
+    /**
+     * httpDelete
+     * @param string $url
+     * @param array $data
+     * @param array $query
+     * @return mixed
+     * @throws HttpException
+     *
+     * @author  baihe <baihe@guahao.com>
+     * @date    2019-11-12 14:30
+     */
+    public function httpDelete(string $url, array $data = [], array $query = [])
+    {
+        $headers = [
+            'Authorization'                   => 'bearer ' . $this->config['accessToken'],
+            'Content-Type'                    => 'application/json',
+            'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
+        ];
+        if (!empty($this->profileId)) {
+            $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
+        }
+        return $this->request($this->apiEndpoint . $url, 'DELETE', ['query' => $query, 'json' => $data, 'headers' => $headers]);
     }
 
     /**

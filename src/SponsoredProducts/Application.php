@@ -4,7 +4,6 @@ namespace easyAmazonAdv\SponsoredProducts;
 
 use easyAmazonAdv\Kernel\Provider\HttpClientServiceProvider;
 use easyAmazonAdv\Kernel\Support\Collection;
-use easyAmazonAdv\SponsoredProducts\Common\ServiceProvider;
 use Pimple\Container;
 
 
@@ -13,7 +12,8 @@ class Application extends Container
     protected $providers = [
         HttpClientServiceProvider::class,
         business\ServiceProvider::class,
-        ServiceProvider::class
+        Common\ServiceProvider::class,
+        ProductTargeting\ServiceProvider::class,
     ];
 
     public function __construct($config = [], array $values = [])
