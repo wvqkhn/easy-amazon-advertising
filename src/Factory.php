@@ -2,8 +2,24 @@
 
 namespace easyAmazonAdv;
 
+/**
+ * Class Factory
+ * @package easyAmazonAdv
+ *
+ * @author  baihe <baihe@guahao.com>
+ * @date    2019-11-12 15:04
+ */
 class Factory
 {
+    /**
+     * make
+     * @param $name
+     * @param array $config
+     * @return mixed
+     *
+     * @author  baihe <baihe@guahao.com>
+     * @date    2019-11-12 15:04
+     */
     public static function make($name, array $config)
     {
         $namespace   = Kernel\Support\Str::studly($name);
@@ -11,6 +27,15 @@ class Factory
         return new $application($config);
     }
 
+    /**
+     * __callStatic
+     * @param $name
+     * @param $arguments
+     * @return mixed
+     *
+     * @author  baihe <baihe@guahao.com>
+     * @date    2019-11-12 15:04
+     */
     public static function __callStatic($name, $arguments)
     {
         return self::make($name, ...$arguments);

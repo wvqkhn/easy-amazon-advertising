@@ -1,36 +1,19 @@
 <?php
 
-namespace easyAmazonAdv\SponsoredProducts\Common;
+namespace easyAmazonAdv\BaseService\Portfolios;
 
 use easyAmazonAdv\Kernel\BaseClient;
 
+/**
+ * Class Client
+ * @package easyAmazonAdv\BaseService\Portfolios
+ *
+ * @author  baihe <baihe@guahao.com>
+ * @date    2019-11-12 14:56
+ */
 class Client extends BaseClient
 {
-    /**
-     * RefreshToken
-     * @return mixed
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 00:25
-     */
-    public function RefreshToken()
-    {
-        return $this->doRefreshToken();
-    }
 
-    /**
-     * listProfiles
-     * @return mixed
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-11 23:30
-     */
-    public function listProfiles()
-    {
-        return $this->httpGet('/profiles');
-    }
 
     /**
      * listPortfolios
@@ -98,10 +81,5 @@ class Client extends BaseClient
     public function getPortfolioEx(string $portfolioId)
     {
         return $this->httpGet('/portfolios/extended/' . $portfolioId);
-    }
-
-    public function listTargetingClauses(array $params = [])
-    {
-        return $this->httpGet('/sp/targets', $params);
     }
 }

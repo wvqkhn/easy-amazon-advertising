@@ -102,18 +102,15 @@ class Client extends BaseClient
     }
 
     /**
-     * createTargetRecommendations 根据传入的asins返回推荐产品列表
-     *
+     * createTargetRecommendations
      * @param array $asins
      * @param int $pageNumber
      * @param int $pageSize
-     *
      * @return mixed
-     *
-     * @example {"recommendedProducts":[{"recommendedTargetAsin":"B01CO96K94"},{"recommendedTargetAsin":"B071KXCQY5"},{"recommendedTargetAsin":"B01AU6CQ5U"},{"recommendedTargetAsin":"B07HGTJMSY"},{"recommendedTargetAsin":"B007ZDVILK"},{"recommendedTargetAsin":"B07F83GXGD"},{"recommendedTargetAsin":"B07QKHT6Q2"},{"recommendedTargetAsin":"B01H2W0576"},{"recommendedTargetAsin":"B07KKD9XD8"},{"recommendedTargetAsin":"B07CQRRC8V"},{"recommendedTargetAsin":"B07PF84MFP"},{"recommendedTargetAsin":"B071XKMLBH"},{"recommendedTargetAsin":"B01LR20KWM"},{"recommendedTargetAsin":"B07HGSLDDL"},{"recommendedTargetAsin":"B07GQGWQ9M"},{"recommendedTargetAsin":"B076LDB351"},{"recommendedTargetAsin":"B00V6IWSB4"},{"recommendedTargetAsin":"B07STYH6Z9"},{"recommendedTargetAsin":"B07RFVNLMW"},{"recommendedTargetAsin":"B00JL52F4Y"},{"recommendedTargetAsin":"B07Q9QGHPJ"},{"recommendedTargetAsin":"B075DCTM29"},{"recommendedTargetAsin":"B072MF31YQ"},{"recommendedTargetAsin":"B07PLYGTRQ"},{"recommendedTargetAsin":"B07H3ZCH15"},{"recommendedTargetAsin":"B00ISGCAJM"},{"recommendedTargetAsin":"B07QTKPG2G"},{"recommendedTargetAsin":"B017IM1PYM"},{"recommendedTargetAsin":"B01AU6CPZQ"},{"recommendedTargetAsin":"B07TFS58GD"},{"recommendedTargetAsin":"B01BTDSNZ0"},{"recommendedTargetAsin":"B07GRKBMJC"},{"recommendedTargetAsin":"B074TFSH16"},{"recommendedTargetAsin":"B07P72Q1MX"},{"recommendedTargetAsin":"B07QPTR3CQ"},{"recommendedTargetAsin":"B07DJ66GSJ"},{"recommendedTargetAsin":"B07HH1LRTZ"},{"recommendedTargetAsin":"B07M5P3172"},{"recommendedTargetAsin":"B01AU6CPZG"},{"recommendedTargetAsin":"B01HRVABD0"},{"recommendedTargetAsin":"B00XKCYE3E"},{"recommendedTargetAsin":"B07PNMJR32"},{"recommendedTargetAsin":"B01AU6CPYW"},{"recommendedTargetAsin":"B07THL31NN"},{"recommendedTargetAsin":"B00TRACRYQ"},{"recommendedTargetAsin":"B01AU6CQK0"},{"recommendedTargetAsin":"B078QHT2KY"},{"recommendedTargetAsin":"B07K27GFH6"},{"recommendedTargetAsin":"B071H1HF55"},{"recommendedTargetAsin":"B07K57NQQH"}],"totalResultCount":235}
+     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 11:40
+     * @date    2019-11-12 15:08
      */
     public function createTargetRecommendations(array $asins, int $pageNumber, int $pageSize = 50)
     {
