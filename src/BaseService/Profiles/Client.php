@@ -5,10 +5,7 @@ namespace easyAmazonAdv\BaseService\Profiles;
 use easyAmazonAdv\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package easyAmazonAdv\BaseService\Profiles
- *
- * 账户资料信息
+ * Class Client.
  *
  * @author  baihe <baihe@guahao.com>
  * @date    2019-11-12 14:56
@@ -16,9 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * listProfiles
+     * listProfiles.
      *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @example [{"profileId":3753569985456409,"countryCode":"US","currencyCode":"USD","dailyBudget":9.99999999E8,"timezone":"America/Los_Angeles","accountInfo":{"marketplaceStringId":"ATVPDKIKX0DER","id":"A2REBULWX98LHD","type":"seller"}},{"profileId":952708443898026,"countryCode":"CA","currencyCode":"CAD","dailyBudget":9.99999999E8,"timezone":"America/Los_Angeles","accountInfo":{"marketplaceStringId":"A2EUQ1WTGCTBG2","id":"A2REBULWX98LHD","type":"seller"}}]
@@ -32,9 +30,12 @@ class Client extends BaseClient
     }
 
     /**
-     * getProfile
+     * getProfile.
+     *
      * @param int $profileId
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -42,13 +43,16 @@ class Client extends BaseClient
      */
     public function getProfile(int $profileId)
     {
-        return $this->httpGet('/profiles/' . $profileId);
+        return $this->httpGet('/profiles/'.$profileId);
     }
 
     /**
-     * updateProfiles
+     * updateProfiles.
+     *
      * @param array $profile
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>

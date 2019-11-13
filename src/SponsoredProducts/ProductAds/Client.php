@@ -5,8 +5,7 @@ namespace easyAmazonAdv\SponsoredProducts\ProductAds;
 use easyAmazonAdv\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package easyAmazonAdv\SponsoredProducts\ProductAds
+ * Class Client.
  *
  * @author  baihe <baihe@guahao.com>
  * @date    2019-11-12 17:08
@@ -14,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * getProductAd
+     * getProductAd.
+     *
      * @param int $adId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -23,12 +24,14 @@ class Client extends BaseClient
      */
     public function getProductAd(int $adId)
     {
-        return $this->httpGet('/sp/productAds/' . $adId);
+        return $this->httpGet('/sp/productAds/'.$adId);
     }
 
     /**
-     * getProductAdEx
+     * getProductAdEx.
+     *
      * @param int $adId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -36,12 +39,14 @@ class Client extends BaseClient
      */
     public function getProductAdEx(int $adId)
     {
-        return $this->httpGet('/sp/productAds/extended/' . $adId);
+        return $this->httpGet('/sp/productAds/extended/'.$adId);
     }
 
     /**
-     * createProductAds
+     * createProductAds.
+     *
      * @param array $products
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -53,8 +58,10 @@ class Client extends BaseClient
     }
 
     /**
-     * updateProductAds
+     * updateProductAds.
+     *
      * @param array $products
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -66,8 +73,10 @@ class Client extends BaseClient
     }
 
     /**
-     * archiveProductAd
+     * archiveProductAd.
+     *
      * @param int $adId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -75,12 +84,14 @@ class Client extends BaseClient
      */
     public function archiveProductAd(int $adId)
     {
-        return $this->httpDelete('/sp/productAds/' . $adId);
+        return $this->httpDelete('/sp/productAds/'.$adId);
     }
 
     /**
-     * listProductAds
+     * listProductAds.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -92,8 +103,10 @@ class Client extends BaseClient
     }
 
     /**
-     * listProductAdsEx
+     * listProductAdsEx.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>

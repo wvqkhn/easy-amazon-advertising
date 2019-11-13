@@ -1,8 +1,6 @@
 <?php
 
-
 namespace easyAmazonAdv\SponsoredProducts\ProductTargeting;
-
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

@@ -418,5 +418,4 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     {
         $this->set($offset, $value);
     }
-
 }

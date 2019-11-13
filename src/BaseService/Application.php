@@ -1,8 +1,6 @@
 <?php
 
-
 namespace easyAmazonAdv\BaseService;
-
 
 use easyAmazonAdv\Kernel\Support\Collection;
 use Pimple\Container;

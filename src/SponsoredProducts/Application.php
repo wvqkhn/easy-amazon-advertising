@@ -7,8 +7,7 @@ use easyAmazonAdv\Kernel\Support\Collection;
 use Pimple\Container;
 
 /**
- * Class Application
- * @package easyAmazonAdv\SponsoredProducts
+ * Class Application.
  *
  * @author  baihe <baihe@guahao.com>
  * @date    2019-11-13 23:51
@@ -30,6 +29,7 @@ class Application extends Container
 
     /**
      * Application constructor.
+     *
      * @param array $config
      * @param array $values
      */
@@ -45,8 +45,10 @@ class Application extends Container
     }
 
     /**
-     * __get
+     * __get.
+     *
      * @param $name
+     *
      * @return mixed
      *
      * @author  baihe <baihe@guahao.com>

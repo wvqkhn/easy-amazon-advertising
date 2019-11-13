@@ -4,10 +4,8 @@ namespace easyAmazonAdv\Kernel\Contracts;
 
 use Psr\Http\Message\RequestInterface;
 
-
 interface AccessTokenInterface
 {
-
     public function getToken(): array;
 
     public function refresh(): self;
