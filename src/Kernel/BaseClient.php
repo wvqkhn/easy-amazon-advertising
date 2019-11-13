@@ -35,6 +35,9 @@ class BaseClient
         $this->config = $app['config']->toArray();
         $this->setEndpoint($this->config['region']);
         $this->validateConfigParameters($this->config);
+        if (isset($app['client']->profileId) && !empty($app['client']->profileId)) {
+            $this->profileId = $app['client']->profileId;
+        }
         if (empty($this->config["accessToken"]) && !empty($this->config["refreshToken"])) {
             $this->doRefreshToken();
         }

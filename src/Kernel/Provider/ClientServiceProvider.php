@@ -4,15 +4,15 @@
 namespace easyAmazonAdv\Kernel\Provider;
 
 
-use GuzzleHttp\Client;
+use easyAmazonAdv\Kernel\Http\Client;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-class HttpClientServiceProvider implements ServiceProviderInterface
+class ClientServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $pimple)
     {
-        $pimple['http_client'] = function ($app) {
+        $pimple['client'] = function ($app) {
             return new Client($app);
         };
     }

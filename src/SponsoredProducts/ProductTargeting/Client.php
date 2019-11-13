@@ -91,7 +91,7 @@ class Client extends BaseClient
      */
     public function createTargetingClauses(array $params)
     {
-        return $this->httpPostJson('/sp/targets/extended', $params);
+        return $this->httpPostJson('/sp/targets', $params);
     }
 
 
