@@ -6,9 +6,18 @@ use easyAmazonAdv\Kernel\Provider\ClientServiceProvider;
 use easyAmazonAdv\Kernel\Support\Collection;
 use Pimple\Container;
 
-
+/**
+ * Class Application
+ * @package easyAmazonAdv\SponsoredProducts
+ *
+ * @author  baihe <baihe@guahao.com>
+ * @date    2019-11-13 23:51
+ */
 class Application extends Container
 {
+    /**
+     * @var array
+     */
     protected $providers = [
         ClientServiceProvider::class,
         ProductTargeting\ServiceProvider::class,
@@ -19,6 +28,11 @@ class Application extends Container
         Bidding\ServiceProvider::class,
     ];
 
+    /**
+     * Application constructor.
+     * @param array $config
+     * @param array $values
+     */
     public function __construct($config = [], array $values = [])
     {
         parent::__construct($values);
@@ -30,11 +44,16 @@ class Application extends Container
         }
     }
 
+    /**
+     * __get
+     * @param $name
+     * @return mixed
+     *
+     * @author  baihe <baihe@guahao.com>
+     * @date    2019-11-13 23:52
+     */
     public function __get($name)
     {
         return $this[$name];
     }
-
-
-
 }

@@ -2,10 +2,9 @@
 
 namespace easyAmazonAdv\Kernel;
 
-use easyAmazonAdv\Kernel\Exceptions\HttpException;
 use easyAmazonAdv\Kernel\Exceptions\InvalidArgumentException;
 use easyAmazonAdv\Kernel\Exceptions\InvalidConfigException;
-use easyAmazonAdv\Kernel\Http\Client;
+use GuzzleHttp\Client;
 
 class BaseClient
 {
@@ -29,6 +28,12 @@ class BaseClient
 
     public $profileId;
 
+    /**
+     * BaseClient constructor.
+     * @param $app
+     * @throws InvalidArgumentException
+     * @throws InvalidConfigException
+     */
     public function __construct($app)
     {
         $this->app    = $app;
@@ -88,11 +93,10 @@ class BaseClient
 
     /**
      * doRefreshToken
-     * @return mixed
-     * @throws HttpException
+     * @return array
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 00:24
+     * @date    2019-11-14 00:24
      */
     public function doRefreshToken()
     {
@@ -111,36 +115,44 @@ class BaseClient
 
     /**
      * request
-     *
      * @param string $url
      * @param string $requestType
      * @param array $options
-     * @return mixed
-     * @throws HttpException
+     * @return array
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-11 23:30
+     * @date    2019-11-14 00:21
      */
     public function request(string $url, string $requestType, array $options)
     {
-        $client   = new \GuzzleHttp\Client();
+        $client   = new Client();
         $response = $client->request($requestType, $url, $options);
-        if (!in_array($response->getStatusCode(), [200, 207])) {
-            throw new HttpException($response->getBody());
+        $httpCode = $response->getStatusCode();
+        if ($httpCode == 307) {
+            // 跳转download下载接口
+            return [];
         }
-        echo $response->getBody();
-        return \GuzzleHttp\json_decode($response->getBody(), true);
+
+        $json = \GuzzleHttp\json_decode($response->getBody(), true);
+        if (!empty($json) && array_key_exists("requestId", $json)) {
+            $requestId = $json['requestId'];
+        }
+        return [
+            'success'   => !empty($httpCode) && preg_match("/^(2|3)\d{2}$/", $httpCode) ? true : false,
+            'code'      => $httpCode,
+            'response'  => \GuzzleHttp\json_decode($response->getBody(), true),
+            'requestId' => !empty($requestId) ? $requestId : 0
+        ];
     }
 
     /**
      * httpGet
      * @param string $url
      * @param array $data
-     * @return mixed
-     * @throws HttpException
+     * @return array
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 00:11
+     * @date    2019-11-14 00:26
      */
     public function httpGet(string $url, array $data = [])
     {
@@ -156,17 +168,16 @@ class BaseClient
     }
 
     /**
-     * httpPostJson
+     * httpPost
      * @param string $url
      * @param array $data
      * @param array $query
-     * @return mixed
-     * @throws HttpException
+     * @return array
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 14:19
+     * @date    2019-11-14 00:26
      */
-    public function httpPostJson(string $url, array $data = [], array $query = [])
+    public function httpPost(string $url, array $data = [], array $query = [])
     {
         $headers = [
             'Authorization'                   => 'bearer ' . $this->config['accessToken'],
@@ -179,19 +190,17 @@ class BaseClient
         return $this->request($this->apiEndpoint . $url, 'POST', ['query' => $query, 'json' => $data, 'headers' => $headers]);
     }
 
-
     /**
-     * httpPost
-     *
+     * httpPut
      * @param string $url
      * @param array $data
-     * @return mixed
-     * @throws HttpException
+     * @param array $query
+     * @return array
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 00:32
+     * @date    2019-11-14 00:26
      */
-    public function httpPut(string $url, array $data = [])
+    public function httpPut(string $url, array $data = [], array $query = [])
     {
         $headers = [
             'Authorization'                   => 'bearer ' . $this->config['accessToken'],
@@ -201,7 +210,7 @@ class BaseClient
         if (!empty($this->profileId)) {
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
-        return $this->request($this->apiEndpoint . $url, 'PUT', ['form_params' => $data, 'headers' => $headers]);
+        return $this->request($this->apiEndpoint . $url, 'PUT', ['query' => $query, 'json' => $data, 'headers' => $headers]);
     }
 
     /**
@@ -209,11 +218,10 @@ class BaseClient
      * @param string $url
      * @param array $data
      * @param array $query
-     * @return mixed
-     * @throws HttpException
+     * @return array
      *
      * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 14:30
+     * @date    2019-11-14 00:26
      */
     public function httpDelete(string $url, array $data = [], array $query = [])
     {
@@ -226,17 +234,5 @@ class BaseClient
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
         return $this->request($this->apiEndpoint . $url, 'DELETE', ['query' => $query, 'json' => $data, 'headers' => $headers]);
-    }
-
-    /**
-     * withAccessTokenMiddleware
-     * @return $this
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 00:33
-     */
-    public function withAccessTokenMiddleware()
-    {
-        return $this;
     }
 }

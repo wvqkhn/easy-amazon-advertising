@@ -91,14 +91,13 @@ class Client extends BaseClient
      */
     public function createTargetingClauses(array $params)
     {
-        return $this->httpPostJson('/sp/targets', $params);
+        return $this->httpPost('/sp/targets', $params);
     }
 
 
     public function updateTargetingClauses(array $params)
     {
-        //todo  put 待定重写
-        return $this->httpPostJson('/sp/targets/extended', $params);
+        return $this->httpPut('/sp/targets', $params);
     }
 
     /**
@@ -114,7 +113,7 @@ class Client extends BaseClient
      */
     public function createTargetRecommendations(array $asins, int $pageNumber, int $pageSize = 50)
     {
-        return $this->httpPostJson('/sp/targets/productRecommendations', compact('asins', 'pageNumber', 'pageSize'));
+        return $this->httpPost('/sp/targets/productRecommendations', compact('asins', 'pageNumber', 'pageSize'));
     }
 
     /**
@@ -167,6 +166,4 @@ class Client extends BaseClient
         $params = [$type => $content];
         return $this->httpGet('/sp/targets/brands', $params);
     }
-
-
 }
