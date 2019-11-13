@@ -1,6 +1,5 @@
 <?php
 
-
 namespace easyAmazonAdv\SponsoredProducts\Campaigns;
 
 use Pimple\Container;

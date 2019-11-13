@@ -5,8 +5,7 @@ namespace easyAmazonAdv\SponsoredProducts\ProductTargeting;
 use easyAmazonAdv\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package easyAmazonAdv\SponsoredProducts\ProductTargeting
+ * Class Client.
  *
  * @author  baihe <baihe@guahao.com>
  * @date    2019-11-12 09:43
@@ -14,10 +13,12 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * getTargetingClause
+     * getTargetingClause.
      *
      * @param string $targetId
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -25,13 +26,16 @@ class Client extends BaseClient
      */
     public function getTargetingClause(string $targetId)
     {
-        return $this->httpGet('/sp/targets/' . $targetId);
+        return $this->httpGet('/sp/targets/'.$targetId);
     }
 
     /**
-     * listTargetingClauses
+     * listTargetingClauses.
+     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -43,9 +47,12 @@ class Client extends BaseClient
     }
 
     /**
-     * getTargetingClauseEx
+     * getTargetingClauseEx.
+     *
      * @param string $targetId
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -53,13 +60,16 @@ class Client extends BaseClient
      */
     public function getTargetingClauseEx(string $targetId)
     {
-        return $this->httpGet('/sp/targets/extended/' . $targetId);
+        return $this->httpGet('/sp/targets/extended/'.$targetId);
     }
 
     /**
-     * listTargetingClausesEx
+     * listTargetingClausesEx.
+     *
      * @param array $params
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -70,20 +80,22 @@ class Client extends BaseClient
         return $this->httpGet('/sp/targets/extended', $params);
     }
 
-
     /**
-     * createTargetingClauses 创建一个或多个目标
+     * createTargetingClauses 创建一个或多个目标.
+     *
      * @param array $params
-     *          'targetId:int'          =>  '目标id'
-     *          'campaignId:int'        =>  '活动id'
-     *          'adGroupId:int'         =>  '组id'
-     *          'state:string'          =>  '状态["enabled", "paused", "archived"]'
-     *          'expression:array'      =>  '扩展'
-     *                  'type:string'   =>  ''
-     *                  'value:string'  =>  ''
-     *          'expressionType:int'    =>  '类型["auto", "manual"]'
-     *          'bid:float'             =>  '广告出价'
+     *                      'targetId:int'          =>  '目标id'
+     *                      'campaignId:int'        =>  '活动id'
+     *                      'adGroupId:int'         =>  '组id'
+     *                      'state:string'          =>  '状态["enabled", "paused", "archived"]'
+     *                      'expression:array'      =>  '扩展'
+     *                      'type:string'   =>  ''
+     *                      'value:string'  =>  ''
+     *                      'expressionType:int'    =>  '类型["auto", "manual"]'
+     *                      'bid:float'             =>  '广告出价'
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -94,18 +106,20 @@ class Client extends BaseClient
         return $this->httpPost('/sp/targets', $params);
     }
 
-
     public function updateTargetingClauses(array $params)
     {
         return $this->httpPut('/sp/targets', $params);
     }
 
     /**
-     * createTargetRecommendations
+     * createTargetRecommendations.
+     *
      * @param array $asins
-     * @param int $pageNumber
-     * @param int $pageSize
+     * @param int   $pageNumber
+     * @param int   $pageSize
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -117,10 +131,12 @@ class Client extends BaseClient
     }
 
     /**
-     * getTargetingCategories 根据传入的ains返回推荐的分类列表
+     * getTargetingCategories 根据传入的ains返回推荐的分类列表.
      *
      * @param array $asins
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @example [{"id":2335752011,"name":"Cell Phones & Accessories","path":"/Cell Phones & Accessories","isTargetable":true},{"id":2407774011,"name":"Cell Phone Cables","path":"/Cell Phones & Accessories/Cell Phone Accessories/Cell Phone Cables","isTargetable":true},{"id":2407755011,"name":"Cell Phone Accessories","path":"/Cell Phones & Accessories/Cell Phone Accessories","isTargetable":true}]
@@ -134,10 +150,12 @@ class Client extends BaseClient
     }
 
     /**
-     * getRefinementsForCategory 返回单个分类$categoryId对应的细化选项
+     * getRefinementsForCategory 返回单个分类$categoryId对应的细化选项.
      *
      * @param int $categoryId
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @example {"categoryId":2407755011,"brands":[{"id":20710054011,"name":"APPLE"},{"id":2528944011,"name":"Apple"},{"id":7637061011,"name":"amFilm"},{"id":19838852011,"name":"INIU"},{"id":2528919011,"name":"AmazonBasics"},{"id":20051359011,"name":"Spigen"},{"id":8886508011,"name":"Mpow"}],"ageRanges":[]}
@@ -151,11 +169,13 @@ class Client extends BaseClient
     }
 
     /**
-     * getBrandRecommendations 根据关键字或者分类id查询对应的推荐品牌
+     * getBrandRecommendations 根据关键字或者分类id查询对应的推荐品牌.
      *
-     * @param string $type keyword categoryId
+     * @param string $type    keyword categoryId
      * @param string $content
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>
@@ -164,6 +184,7 @@ class Client extends BaseClient
     public function getBrandRecommendations(string $type, string $content)
     {
         $params = [$type => $content];
+
         return $this->httpGet('/sp/targets/brands', $params);
     }
 }

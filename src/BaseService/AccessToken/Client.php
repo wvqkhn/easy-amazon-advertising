@@ -5,8 +5,7 @@ namespace easyAmazonAdv\BaseService\AccessToken;
 use easyAmazonAdv\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package easyAmazonAdv\BaseService\AccessToken
+ * Class Client.
  *
  * @author  baihe <baihe@guahao.com>
  * @date    2019-11-12 14:56
@@ -14,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * RefreshToken
+     * RefreshToken.
+     *
      * @return mixed
+     *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @author  baihe <baihe@guahao.com>

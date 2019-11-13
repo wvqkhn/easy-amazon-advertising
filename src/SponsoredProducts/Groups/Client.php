@@ -5,8 +5,7 @@ namespace easyAmazonAdv\SponsoredProducts\Groups;
 use easyAmazonAdv\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package easyAmazonAdv\SponsoredProducts\Groups
+ * Class Client.
  *
  * @author  baihe <baihe@guahao.com>
  * @date    2019-11-12 17:50
@@ -14,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * getAdGroup
+     * getAdGroup.
+     *
      * @param int $adGroupId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -23,12 +24,14 @@ class Client extends BaseClient
      */
     public function getAdGroup(int $adGroupId)
     {
-        return $this->httpGet('/sp/adGroups/' . $adGroupId);
+        return $this->httpGet('/sp/adGroups/'.$adGroupId);
     }
 
     /**
-     * getAdGroupEx
+     * getAdGroupEx.
+     *
      * @param int $adGroupId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -36,12 +39,14 @@ class Client extends BaseClient
      */
     public function getAdGroupEx(int $adGroupId)
     {
-        return $this->httpGet('/sp/adGroups/extended/' . $adGroupId);
+        return $this->httpGet('/sp/adGroups/extended/'.$adGroupId);
     }
 
     /**
-     * createAdGroups
+     * createAdGroups.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -53,8 +58,10 @@ class Client extends BaseClient
     }
 
     /**
-     * updateAdGroups
+     * updateAdGroups.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -66,8 +73,10 @@ class Client extends BaseClient
     }
 
     /**
-     * archiveAdGroup
+     * archiveAdGroup.
+     *
      * @param int $adGroupId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -75,12 +84,14 @@ class Client extends BaseClient
      */
     public function archiveAdGroup(int $adGroupId)
     {
-        return $this->httpDelete('/sp/adGroups/' . $adGroupId);
+        return $this->httpDelete('/sp/adGroups/'.$adGroupId);
     }
 
     /**
-     * listAdGroups
+     * listAdGroups.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -92,8 +103,10 @@ class Client extends BaseClient
     }
 
     /**
-     * listAdGroupsEx
+     * listAdGroupsEx.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>

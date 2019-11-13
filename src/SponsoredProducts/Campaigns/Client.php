@@ -5,8 +5,7 @@ namespace easyAmazonAdv\SponsoredProducts\Campaigns;
 use easyAmazonAdv\Kernel\BaseClient;
 
 /**
- * Class Client
- * @package easyAmazonAdv\SponsoredProducts\Campaigns
+ * Class Client.
  *
  * @author  baihe <baihe@guahao.com>
  * @date    2019-11-12 17:50
@@ -14,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * getCampaign
+     * getCampaign.
+     *
      * @param int $campaignId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -23,12 +24,14 @@ class Client extends BaseClient
      */
     public function getCampaign(int $campaignId)
     {
-        return $this->httpGet('/sp/campaigns/' . $campaignId);
+        return $this->httpGet('/sp/campaigns/'.$campaignId);
     }
 
     /**
-     * getCampaignEx
+     * getCampaignEx.
+     *
      * @param int $campaignId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -36,12 +39,14 @@ class Client extends BaseClient
      */
     public function getCampaignEx(int $campaignId)
     {
-        return $this->httpGet('/sp/campaigns/extended/' . $campaignId);
+        return $this->httpGet('/sp/campaigns/extended/'.$campaignId);
     }
 
     /**
-     * createCampaigns
+     * createCampaigns.
+     *
      * @param $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -53,8 +58,10 @@ class Client extends BaseClient
     }
 
     /**
-     * updateCampaigns
+     * updateCampaigns.
+     *
      * @param $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -66,8 +73,10 @@ class Client extends BaseClient
     }
 
     /**
-     * archiveCampaign
+     * archiveCampaign.
+     *
      * @param int $campaignId
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -75,12 +84,14 @@ class Client extends BaseClient
      */
     public function archiveCampaign(int $campaignId)
     {
-        return $this->httpDelete('/sp/campaigns/' . $campaignId);
+        return $this->httpDelete('/sp/campaigns/'.$campaignId);
     }
 
     /**
-     * listCampaigns
+     * listCampaigns.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
@@ -92,8 +103,10 @@ class Client extends BaseClient
     }
 
     /**
-     * listCampaignsEx
+     * listCampaignsEx.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <baihe@guahao.com>
