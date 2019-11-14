@@ -25,6 +25,7 @@ class Application extends Container
         Groups\ServiceProvider::class,
         Campaigns\ServiceProvider::class,
         Bidding\ServiceProvider::class,
+        Report\ServiceProvider::class,
     ];
 
     /**
