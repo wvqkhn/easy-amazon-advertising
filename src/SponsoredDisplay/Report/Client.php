@@ -7,9 +7,11 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * requestReport
+     * requestReport.
+     *
      * @param string $recordType
-     * @param array $params
+     * @param array  $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -21,8 +23,10 @@ class Client extends BaseClient
     }
 
     /**
-     * getReport
+     * getReport.
+     *
      * @param string $reportId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -34,10 +38,11 @@ class Client extends BaseClient
     }
 
     /**
-     * downloadReportData
+     * downloadReportData.
      *
      * @param string $reportId
      * @param $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
