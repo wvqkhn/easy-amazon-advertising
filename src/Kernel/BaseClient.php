@@ -38,7 +38,7 @@ class BaseClient
      */
     public function __construct($app)
     {
-        $this->app    = $app;
+        $this->app = $app;
         $this->config = $app['config']->toArray();
         $this->setEndpoint($this->config['region']);
         $this->validateConfigParameters($this->config);
@@ -92,7 +92,7 @@ class BaseClient
 
     public function setEndpoint(string $region)
     {
-        $this->apiEndpoint = self::$apiEndpoints[$region] . '/' . self::$apiVersion;
+        $this->apiEndpoint = self::$apiEndpoints[$region].'/'.self::$apiVersion;
     }
 
     /**
@@ -107,12 +107,12 @@ class BaseClient
     {
         $headers = [
             'Content-Type' => 'application/x-www-form-urlencoded',
-            'User-Agent'   => 'AdvertisingAPI PHP Client Library v1.2',
+            'User-Agent' => 'AdvertisingAPI PHP Client Library v1.2',
         ];
-        $params  = [
-            'grant_type'    => 'refresh_token',
+        $params = [
+            'grant_type' => 'refresh_token',
             'refresh_token' => $this->config['refreshToken'],
-            'client_id'     => $this->config['clientId'],
+            'client_id' => $this->config['clientId'],
             'client_secret' => $this->config['clientSecret'],
         ];
 
@@ -124,7 +124,7 @@ class BaseClient
      *
      * @param string $url
      * @param string $requestType
-     * @param array $options
+     * @param array  $options
      *
      * @return array
      *
@@ -133,10 +133,10 @@ class BaseClient
      */
     public function request(string $url, string $requestType, array $options)
     {
-        $client   = new Client();
+        $client = new Client();
         $response = $client->request($requestType, $url, $options);
         $httpCode = $response->getStatusCode();
-        $json     = \GuzzleHttp\json_decode($response->getBody(), true);
+        $json = \GuzzleHttp\json_decode($response->getBody(), true);
         if (307 == $httpCode) {
             // 跳转download下载接口
             $this->httpDownload($json['location'], true);
@@ -147,9 +147,9 @@ class BaseClient
         }
 
         return [
-            'success'   => !empty($httpCode) && preg_match("/^(2|3)\d{2}$/", $httpCode) ? true : false,
-            'code'      => $httpCode,
-            'response'  => \GuzzleHttp\json_decode($response->getBody(), true),
+            'success' => !empty($httpCode) && preg_match("/^(2|3)\d{2}$/", $httpCode) ? true : false,
+            'code' => $httpCode,
+            'response' => \GuzzleHttp\json_decode($response->getBody(), true),
             'requestId' => !empty($requestId) ? $requestId : 0,
         ];
     }
@@ -158,7 +158,7 @@ class BaseClient
      * httpGet.
      *
      * @param string $url
-     * @param array $data
+     * @param array  $data
      *
      * @return array
      *
@@ -168,23 +168,23 @@ class BaseClient
     public function httpGet(string $url, array $data = [])
     {
         $headers = [
-            'Authorization'                   => 'bearer ' . $this->config['accessToken'],
-            'Content-Type'                    => 'application/json',
+            'Authorization' => 'bearer '.$this->config['accessToken'],
+            'Content-Type' => 'application/json',
             'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
         ];
         if (!empty($this->profileId)) {
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
 
-        return $this->request($this->apiEndpoint . $url, 'GET', ['query' => $data, 'headers' => $headers]);
+        return $this->request($this->apiEndpoint.$url, 'GET', ['query' => $data, 'headers' => $headers]);
     }
 
     /**
      * httpPost.
      *
      * @param string $url
-     * @param array $data
-     * @param array $query
+     * @param array  $data
+     * @param array  $query
      *
      * @return array
      *
@@ -194,23 +194,23 @@ class BaseClient
     public function httpPost(string $url, array $data = [], array $query = [])
     {
         $headers = [
-            'Authorization'                   => 'bearer ' . $this->config['accessToken'],
-            'Content-Type'                    => 'application/json',
+            'Authorization' => 'bearer '.$this->config['accessToken'],
+            'Content-Type' => 'application/json',
             'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
         ];
         if (!empty($this->profileId)) {
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
 
-        return $this->request($this->apiEndpoint . $url, 'POST', ['query' => $query, 'json' => $data, 'headers' => $headers]);
+        return $this->request($this->apiEndpoint.$url, 'POST', ['query' => $query, 'json' => $data, 'headers' => $headers]);
     }
 
     /**
      * httpPut.
      *
      * @param string $url
-     * @param array $data
-     * @param array $query
+     * @param array  $data
+     * @param array  $query
      *
      * @return array
      *
@@ -220,23 +220,23 @@ class BaseClient
     public function httpPut(string $url, array $data = [], array $query = [])
     {
         $headers = [
-            'Authorization'                   => 'bearer ' . $this->config['accessToken'],
-            'Content-Type'                    => 'application/json',
+            'Authorization' => 'bearer '.$this->config['accessToken'],
+            'Content-Type' => 'application/json',
             'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
         ];
         if (!empty($this->profileId)) {
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
 
-        return $this->request($this->apiEndpoint . $url, 'PUT', ['query' => $query, 'json' => $data, 'headers' => $headers]);
+        return $this->request($this->apiEndpoint.$url, 'PUT', ['query' => $query, 'json' => $data, 'headers' => $headers]);
     }
 
     /**
      * httpDelete.
      *
      * @param string $url
-     * @param array $data
-     * @param array $query
+     * @param array  $data
+     * @param array  $query
      *
      * @return array
      *
@@ -246,22 +246,23 @@ class BaseClient
     public function httpDelete(string $url, array $data = [], array $query = [])
     {
         $headers = [
-            'Authorization'                   => 'bearer ' . $this->config['accessToken'],
-            'Content-Type'                    => 'application/json',
+            'Authorization' => 'bearer '.$this->config['accessToken'],
+            'Content-Type' => 'application/json',
             'Amazon-Advertising-API-ClientId' => $this->config['clientId'],
         ];
         if (!empty($this->profileId)) {
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
 
-        return $this->request($this->apiEndpoint . $url, 'DELETE', ['query' => $query, 'json' => $data, 'headers' => $headers]);
+        return $this->request($this->apiEndpoint.$url, 'DELETE', ['query' => $query, 'json' => $data, 'headers' => $headers]);
     }
 
     /**
-     * httpDownload
+     * httpDownload.
      *
      * @param string $location
-     * @param bool $gunzip
+     * @param bool   $gunzip
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -272,15 +273,16 @@ class BaseClient
         $headers = [];
         if (!$gunzip) {
             /* only send authorization header when not downloading actual file */
-            $headers['Authorization'] = 'bearer ' . $this->config['accessToken'];
+            $headers['Authorization'] = 'bearer '.$this->config['accessToken'];
         }
         if (!empty($this->profileId)) {
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
         $response = $this->request($location, 'GET', ['query' => [], 'headers' => $headers]);
         if ($gunzip) {
-            $response["response"] = gzdecode($response["response"]);
+            $response['response'] = gzdecode($response['response']);
         }
+
         return $response;
     }
 }
