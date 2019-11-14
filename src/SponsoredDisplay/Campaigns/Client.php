@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getCampaign(int $campaignId)
     {
-        return $this->httpGet('/sd/campaigns/' . $campaignId);
+        return $this->httpGet('/sd/campaigns/'.$campaignId);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function getCampaignEx(int $campaignId)
     {
-        return $this->httpGet('/sd/campaigns/extended/' . $campaignId);
+        return $this->httpGet('/sd/campaigns/extended/'.$campaignId);
     }
 
     /**
@@ -84,7 +84,7 @@ class Client extends BaseClient
      */
     public function archiveCampaign(int $campaignId)
     {
-        return $this->httpDelete('/sd/campaigns/' . $campaignId);
+        return $this->httpDelete('/sd/campaigns/'.$campaignId);
     }
 
     /**

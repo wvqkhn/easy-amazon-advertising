@@ -13,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * getTargetingClause
+     * getTargetingClause.
+     *
      * @param string $targetId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -26,8 +28,10 @@ class Client extends BaseClient
     }
 
     /**
-     * listTargetingClauses
+     * listTargetingClauses.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -39,8 +43,10 @@ class Client extends BaseClient
     }
 
     /**
-     * getTargetingClauseEx
+     * getTargetingClauseEx.
+     *
      * @param string $targetId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -52,8 +58,10 @@ class Client extends BaseClient
     }
 
     /**
-     * listTargetingClausesEx
+     * listTargetingClausesEx.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -65,8 +73,10 @@ class Client extends BaseClient
     }
 
     /**
-     * createTargetingClauses
+     * createTargetingClauses.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -78,8 +88,10 @@ class Client extends BaseClient
     }
 
     /**
-     * updateTargetingClauses
+     * updateTargetingClauses.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>

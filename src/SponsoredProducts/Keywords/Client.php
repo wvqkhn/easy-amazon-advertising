@@ -13,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * getCampaign
+     * getCampaign.
+     *
      * @param string $campaignId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -26,8 +28,10 @@ class Client extends BaseClient
     }
 
     /**
-     * getCampaignEx
+     * getCampaignEx.
+     *
      * @param string $campaignId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -39,8 +43,10 @@ class Client extends BaseClient
     }
 
     /**
-     * createCampaigns
+     * createCampaigns.
+     *
      * @param array $campaigns
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -52,8 +58,10 @@ class Client extends BaseClient
     }
 
     /**
-     * updateCampaigns
+     * updateCampaigns.
+     *
      * @param array $campaigns
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -65,8 +73,10 @@ class Client extends BaseClient
     }
 
     /**
-     * archiveCampaign
+     * archiveCampaign.
+     *
      * @param string $campaignId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -78,8 +88,10 @@ class Client extends BaseClient
     }
 
     /**
-     * listCampaigns
+     * listCampaigns.
+     *
      * @param array $campaigns
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -87,12 +99,14 @@ class Client extends BaseClient
      */
     public function listCampaigns(array $campaigns)
     {
-        return $this->httpGet("/sp/campaigns", $campaigns);
+        return $this->httpGet('/sp/campaigns', $campaigns);
     }
 
     /**
-     * listCampaignsEx
+     * listCampaignsEx.
+     *
      * @param array $campaigns
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -100,6 +114,6 @@ class Client extends BaseClient
      */
     public function listCampaignsEx(array $campaigns)
     {
-        return $this->httpGet("/sp/campaigns/extended", $campaigns);
+        return $this->httpGet('/sp/campaigns/extended', $campaigns);
     }
 }

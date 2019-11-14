@@ -13,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * getAdGroupBidRecommendations
+     * getAdGroupBidRecommendations.
+     *
      * @param int $adGroupId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -26,8 +28,10 @@ class Client extends BaseClient
     }
 
     /**
-     * getKeywordBidRecommendations
+     * getKeywordBidRecommendations.
+     *
      * @param int $keywordId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -39,8 +43,10 @@ class Client extends BaseClient
     }
 
     /**
-     * createKeywordBidRecommendations
+     * createKeywordBidRecommendations.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -52,8 +58,10 @@ class Client extends BaseClient
     }
 
     /**
-     * getBidRecommendations
+     * getBidRecommendations.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>

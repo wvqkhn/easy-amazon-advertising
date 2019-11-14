@@ -6,8 +6,7 @@ use Pimple\ServiceProviderInterface;
 use Pimple\Container;
 
 /**
- * Class ServiceProvider
- * @package easyAmazonAdv\SponsoredProducts\Report
+ * Class ServiceProvider.
  *
  * @author  baihe <b_aihe@163.com>
  * @date    2019-11-14 19:49
