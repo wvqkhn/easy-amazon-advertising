@@ -1,6 +1,6 @@
 <?php
 
-namespace easyAmazonAdv\SponsoredProducts;
+namespace easyAmazonAdv\SponsoredDisplay;
 
 use easyAmazonAdv\Kernel\Provider\ClientServiceProvider;
 use easyAmazonAdv\Kernel\Support\Collection;
@@ -19,12 +19,9 @@ class Application extends Container
      */
     protected $providers = [
         ClientServiceProvider::class,
-        ProductTargeting\ServiceProvider::class,
-        ProductAds\ServiceProvider::class,
-        Keywords\ServiceProvider::class,
-        Groups\ServiceProvider::class,
         Campaigns\ServiceProvider::class,
-        Bidding\ServiceProvider::class,
+        Groups\ServiceProvider::class,
+        ProductAds\ServiceProvider::class,
         Report\ServiceProvider::class,
     ];
 

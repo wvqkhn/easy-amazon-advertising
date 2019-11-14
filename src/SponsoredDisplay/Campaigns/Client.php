@@ -1,6 +1,6 @@
 <?php
 
-namespace easyAmazonAdv\SponsoredProducts\Campaigns;
+namespace easyAmazonAdv\sdonsoredDisdlay\Campaigns;
 
 use easyAmazonAdv\Kernel\BaseClient;
 
@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getCampaign(int $campaignId)
     {
-        return $this->httpGet('/sp/campaigns/'.$campaignId);
+        return $this->httpGet('/sd/campaigns/' . $campaignId);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function getCampaignEx(int $campaignId)
     {
-        return $this->httpGet('/sp/campaigns/extended/'.$campaignId);
+        return $this->httpGet('/sd/campaigns/extended/' . $campaignId);
     }
 
     /**
@@ -54,7 +54,7 @@ class Client extends BaseClient
      */
     public function createCampaigns($params)
     {
-        return $this->httpPost('/sp/campaigns,', $params);
+        return $this->httpPost('/sd/campaigns,', $params);
     }
 
     /**
@@ -69,7 +69,7 @@ class Client extends BaseClient
      */
     public function updateCampaigns($params)
     {
-        return $this->httpPut('/sp/campaigns,', $params);
+        return $this->httpPut('/sd/campaigns,', $params);
     }
 
     /**
@@ -84,7 +84,7 @@ class Client extends BaseClient
      */
     public function archiveCampaign(int $campaignId)
     {
-        return $this->httpDelete('/sp/campaigns/'.$campaignId);
+        return $this->httpDelete('/sd/campaigns/' . $campaignId);
     }
 
     /**
@@ -99,7 +99,7 @@ class Client extends BaseClient
      */
     public function listCampaigns(array $params = [])
     {
-        return $this->httpGet('/sp/campaigns', $params);
+        return $this->httpGet('/sd/campaigns', $params);
     }
 
     /**
@@ -114,6 +114,6 @@ class Client extends BaseClient
      */
     public function listCampaignsEx(array $params = [])
     {
-        return $this->httpGet('/sp/campaigns/extended', $params);
+        return $this->httpGet('/sd/campaigns/extended', $params);
     }
 }

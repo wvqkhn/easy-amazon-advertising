@@ -7,7 +7,7 @@ use easyAmazonAdv\Kernel\BaseClient;
 /**
  * Class Client.
  *
- * @author  baihe <baihe@guahao.com>
+ * @author  baihe <b_aihe@163.com>
  * @date    2019-11-12 14:56
  */
 class Client extends BaseClient
@@ -19,7 +19,7 @@ class Client extends BaseClient
      *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 15:06
      */
     public function RefreshToken()

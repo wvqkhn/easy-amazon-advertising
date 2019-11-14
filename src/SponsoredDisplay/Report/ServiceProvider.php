@@ -1,21 +1,22 @@
 <?php
 
-namespace easyAmazonAdv\BaseService\AccessToken;
+namespace easyAmazonAdv\SponsoredDisplay\Report;
 
-use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+use Pimple\Container;
 
 /**
- * Class ServiceProvider.
+ * Class ServiceProvider
+ * @package easyAmazonAdv\SponsoredProducts\Report
  *
  * @author  baihe <b_aihe@163.com>
- * @date    2019-11-12 14:59
+ * @date    2019-11-14 19:49
  */
 class ServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $pimple)
     {
-        $pimple['accessToken'] = function ($app) {
+        $pimple['report'] = function ($app) {
             return new Client($app);
         };
     }

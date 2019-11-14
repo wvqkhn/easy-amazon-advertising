@@ -9,7 +9,7 @@ class ServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $pimple)
     {
-        $pimple['productAds'] = function ($app) {
+        $pimple['product_ads'] = function ($app) {
             return new Client($app);
         };
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace easyAmazonAdv\SponsoredProducts\Report;
+namespace easyAmazonAdv\SponsoredDisplay\Report;
 
 use easyAmazonAdv\Kernel\BaseClient;
 
@@ -17,7 +17,7 @@ class Client extends BaseClient
      */
     public function requestReport(string $recordType, array $params)
     {
-        return $this->httpPost("/sp/{$recordType}/report", $params);
+        return $this->httpPost("/sd/{$recordType}/report", $params);
     }
 
     /**

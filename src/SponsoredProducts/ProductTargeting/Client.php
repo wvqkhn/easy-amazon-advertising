@@ -7,57 +7,84 @@ use easyAmazonAdv\Kernel\BaseClient;
 /**
  * Class Client.
  *
- * @author  baihe <baihe@guahao.com>
+ * @author  baihe <b_aihe@163.com>
  * @date    2019-11-12 09:43
  */
 class Client extends BaseClient
 {
+    /**
+     * getTargetingClause
+     * @param string $targetId
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 19:50
+     */
     public function getTargetingClause(string $targetId)
     {
         return $this->httpGet('/sp/targets/'.$targetId);
     }
 
+    /**
+     * listTargetingClauses
+     * @param array $params
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 19:50
+     */
     public function listTargetingClauses(array $params = [])
     {
         return $this->httpGet('/sp/targets', $params);
     }
 
+    /**
+     * getTargetingClauseEx
+     * @param string $targetId
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 19:50
+     */
     public function getTargetingClauseEx(string $targetId)
     {
         return $this->httpGet('/sp/targets/extended/'.$targetId);
     }
 
+    /**
+     * listTargetingClausesEx
+     * @param array $params
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 19:50
+     */
     public function listTargetingClausesEx(array $params = [])
     {
         return $this->httpGet('/sp/targets/extended', $params);
     }
 
     /**
-     * createTargetingClauses 创建一个或多个目标.
-     *
+     * createTargetingClauses
      * @param array $params
-     *                      'targetId:int'          =>  '目标id'
-     *                      'campaignId:int'        =>  '活动id'
-     *                      'adGroupId:int'         =>  '组id'
-     *                      'state:string'          =>  '状态["enabled", "paused", "archived"]'
-     *                      'expression:array'      =>  '扩展'
-     *                      'type:string'   =>  ''
-     *                      'value:string'  =>  ''
-     *                      'expressionType:int'    =>  '类型["auto", "manual"]'
-     *                      'bid:float'             =>  '广告出价'
+     * @return array
      *
-     * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 14:11
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 19:50
      */
     public function createTargetingClauses(array $params)
     {
         return $this->httpPost('/sp/targets', $params);
     }
 
+    /**
+     * updateTargetingClauses
+     * @param array $params
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 19:50
+     */
     public function updateTargetingClauses(array $params)
     {
         return $this->httpPut('/sp/targets', $params);
@@ -74,7 +101,7 @@ class Client extends BaseClient
      *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 15:08
      */
     public function createTargetRecommendations(array $asins, int $pageNumber, int $pageSize = 50)
@@ -93,7 +120,7 @@ class Client extends BaseClient
      *
      * @example [{"id":2335752011,"name":"Cell Phones & Accessories","path":"/Cell Phones & Accessories","isTargetable":true},{"id":2407774011,"name":"Cell Phone Cables","path":"/Cell Phones & Accessories/Cell Phone Accessories/Cell Phone Cables","isTargetable":true},{"id":2407755011,"name":"Cell Phone Accessories","path":"/Cell Phones & Accessories/Cell Phone Accessories","isTargetable":true}]
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 11:48
      */
     public function getTargetingCategories(array $asins)
@@ -112,7 +139,7 @@ class Client extends BaseClient
      *
      * @example {"categoryId":2407755011,"brands":[{"id":20710054011,"name":"APPLE"},{"id":2528944011,"name":"Apple"},{"id":7637061011,"name":"amFilm"},{"id":19838852011,"name":"INIU"},{"id":2528919011,"name":"AmazonBasics"},{"id":20051359011,"name":"Spigen"},{"id":8886508011,"name":"Mpow"}],"ageRanges":[]}
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 11:52
      */
     public function getRefinementsForCategory(int $categoryId)
@@ -130,7 +157,7 @@ class Client extends BaseClient
      *
      * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 11:59
      */
     public function getBrandRecommendations(string $type, string $content)

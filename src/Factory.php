@@ -5,7 +5,7 @@ namespace easyAmazonAdv;
 /**
  * Class Factory.
  *
- * @author  baihe <baihe@guahao.com>
+ * @author  baihe <b_aihe@163.com>
  * @date    2019-11-12 15:04
  */
 class Factory
@@ -18,7 +18,7 @@ class Factory
      *
      * @return mixed
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 15:04
      */
     public static function make($name, array $config)
@@ -52,7 +52,7 @@ class Factory
      *
      * @return mixed
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 15:04
      */
     public static function __callStatic($name, $arguments)

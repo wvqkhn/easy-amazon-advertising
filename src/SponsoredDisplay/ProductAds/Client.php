@@ -1,6 +1,6 @@
 <?php
 
-namespace easyAmazonAdv\SponsoredProducts\ProductAds;
+namespace easyAmazonAdv\SponsoredDisplay\ProductAds;
 
 use easyAmazonAdv\Kernel\BaseClient;
 
@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getProductAd(int $adId)
     {
-        return $this->httpGet('/sp/productAds/'.$adId);
+        return $this->httpGet('/sd/productAds/'.$adId);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function getProductAdEx(int $adId)
     {
-        return $this->httpGet('/sp/productAds/extended/'.$adId);
+        return $this->httpGet('/sd/productAds/extended/'.$adId);
     }
 
     /**
@@ -54,7 +54,7 @@ class Client extends BaseClient
      */
     public function createProductAds(array $products)
     {
-        return $this->httpPost('/sp/productAds', $products);
+        return $this->httpPost('/sd/productAds', $products);
     }
 
     /**
@@ -69,7 +69,7 @@ class Client extends BaseClient
      */
     public function updateProductAds(array $products)
     {
-        return $this->httpPut('/sp/productAds', $products);
+        return $this->httpPut('/sd/productAds', $products);
     }
 
     /**
@@ -84,7 +84,7 @@ class Client extends BaseClient
      */
     public function archiveProductAd(int $adId)
     {
-        return $this->httpDelete('/sp/productAds/'.$adId);
+        return $this->httpDelete('/sd/productAds/'.$adId);
     }
 
     /**
@@ -99,7 +99,7 @@ class Client extends BaseClient
      */
     public function listProductAds(array $params = [])
     {
-        return $this->httpGet('/sp/productAds', $params);
+        return $this->httpGet('/sd/productAds', $params);
     }
 
     /**
@@ -114,6 +114,6 @@ class Client extends BaseClient
      */
     public function listProductAdsEx(array $params)
     {
-        return $this->httpGet('/sp/productAds/extended', $params);
+        return $this->httpGet('/sd/productAds/extended', $params);
     }
 }

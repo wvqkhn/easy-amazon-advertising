@@ -7,7 +7,7 @@ use easyAmazonAdv\Kernel\BaseClient;
 /**
  * Class Client.
  *
- * @author  baihe <baihe@guahao.com>
+ * @author  baihe <b_aihe@163.com>
  * @date    2019-11-12 17:50
  */
 class Client extends BaseClient
@@ -19,7 +19,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
     public function getAdGroup(int $adGroupId)
@@ -34,7 +34,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
     public function getAdGroupEx(int $adGroupId)
@@ -49,7 +49,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
     public function createAdGroups(array $params)
@@ -64,7 +64,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
     public function updateAdGroups(array $params)
@@ -79,7 +79,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
     public function archiveAdGroup(int $adGroupId)
@@ -94,7 +94,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
     public function listAdGroups(array $params = [])
@@ -109,7 +109,7 @@ class Client extends BaseClient
      *
      * @return array
      *
-     * @author  baihe <baihe@guahao.com>
+     * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
     public function listAdGroupsEx(array $params = [])

@@ -1,6 +1,6 @@
 <?php
 
-namespace easyAmazonAdv\SponsoredProducts\ProductAds;
+namespace easyAmazonAdv\SponsoredDisplay\Groups;
 
 use easyAmazonAdv\Kernel\BaseClient;
 
@@ -8,87 +8,42 @@ use easyAmazonAdv\Kernel\BaseClient;
  * Class Client.
  *
  * @author  baihe <b_aihe@163.com>
- * @date    2019-11-12 17:08
+ * @date    2019-11-12 17:50
  */
 class Client extends BaseClient
 {
     /**
-     * getProductAd.
+     * getAdGroup.
      *
-     * @param int $adId
-     *
-     * @return array
-     *
-     * @author  baihe <b_aihe@163.com>
-     * @date    2019-11-14 00:47
-     */
-    public function getProductAd(int $adId)
-    {
-        return $this->httpGet('/sp/productAds/'.$adId);
-    }
-
-    /**
-     * getProductAdEx.
-     *
-     * @param int $adId
+     * @param int $adGroupId
      *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
-    public function getProductAdEx(int $adId)
+    public function getAdGroup(int $adGroupId)
     {
-        return $this->httpGet('/sp/productAds/extended/'.$adId);
+        return $this->httpGet('/sp/adGroups/'.$adGroupId);
     }
 
     /**
-     * createProductAds.
+     * getAdGroupEx.
      *
-     * @param array $products
+     * @param int $adGroupId
      *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
-    public function createProductAds(array $products)
+    public function getAdGroupEx(int $adGroupId)
     {
-        return $this->httpPost('/sp/productAds', $products);
+        return $this->httpGet('/sd/adGroups/extended/'.$adGroupId);
     }
 
     /**
-     * updateProductAds.
-     *
-     * @param array $products
-     *
-     * @return array
-     *
-     * @author  baihe <b_aihe@163.com>
-     * @date    2019-11-14 00:47
-     */
-    public function updateProductAds(array $products)
-    {
-        return $this->httpPut('/sp/productAds', $products);
-    }
-
-    /**
-     * archiveProductAd.
-     *
-     * @param int $adId
-     *
-     * @return array
-     *
-     * @author  baihe <b_aihe@163.com>
-     * @date    2019-11-14 00:47
-     */
-    public function archiveProductAd(int $adId)
-    {
-        return $this->httpDelete('/sp/productAds/'.$adId);
-    }
-
-    /**
-     * listProductAds.
+     * createAdGroups.
      *
      * @param array $params
      *
@@ -97,13 +52,13 @@ class Client extends BaseClient
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
-    public function listProductAds(array $params = [])
+    public function createAdGroups(array $params)
     {
-        return $this->httpGet('/sp/productAds', $params);
+        return $this->httpPost('/sd/adGroups', $params);
     }
 
     /**
-     * listProductAdsEx.
+     * updateAdGroups.
      *
      * @param array $params
      *
@@ -112,8 +67,53 @@ class Client extends BaseClient
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 00:47
      */
-    public function listProductAdsEx(array $params)
+    public function updateAdGroups(array $params)
     {
-        return $this->httpGet('/sp/productAds/extended', $params);
+        return $this->httpPut('/sd/adGroups', $params);
+    }
+
+    /**
+     * archiveAdGroup.
+     *
+     * @param int $adGroupId
+     *
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 00:47
+     */
+    public function archiveAdGroup(int $adGroupId)
+    {
+        return $this->httpDelete('/sd/adGroups/'.$adGroupId);
+    }
+
+    /**
+     * listAdGroups.
+     *
+     * @param array $params
+     *
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 00:47
+     */
+    public function listAdGroups(array $params = [])
+    {
+        return $this->httpGet('/sd/adGroups/', $params);
+    }
+
+    /**
+     * listAdGroupsEx.
+     *
+     * @param array $params
+     *
+     * @return array
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-14 00:47
+     */
+    public function listAdGroupsEx(array $params = [])
+    {
+        return $this->httpGet('/sd/adGroups/extended', $params);
     }
 }
