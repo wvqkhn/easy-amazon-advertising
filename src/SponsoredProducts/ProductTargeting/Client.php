@@ -12,69 +12,22 @@ use easyAmazonAdv\Kernel\BaseClient;
  */
 class Client extends BaseClient
 {
-    /**
-     * getTargetingClause.
-     *
-     * @param string $targetId
-     *
-     * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 09:46
-     */
     public function getTargetingClause(string $targetId)
     {
         return $this->httpGet('/sp/targets/'.$targetId);
     }
 
-    /**
-     * listTargetingClauses.
-     *
-     * @param array $params
-     *
-     * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 09:47
-     */
     public function listTargetingClauses(array $params = [])
     {
         return $this->httpGet('/sp/targets', $params);
     }
 
-    /**
-     * getTargetingClauseEx.
-     *
-     * @param string $targetId
-     *
-     * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 14:08
-     */
     public function getTargetingClauseEx(string $targetId)
     {
         return $this->httpGet('/sp/targets/extended/'.$targetId);
     }
 
-    /**
-     * listTargetingClausesEx.
-     *
-     * @param array $params
-     *
-     * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
-     * @author  baihe <baihe@guahao.com>
-     * @date    2019-11-12 14:08
-     */
+
     public function listTargetingClausesEx(array $params = [])
     {
         return $this->httpGet('/sp/targets/extended', $params);
