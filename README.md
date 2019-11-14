@@ -41,6 +41,28 @@ $result = $app->access_token->refreshToken();
 ];
 ```
 
+### 获取profiles
+```
+$result = $app->profiles->listProfiles();
+
+[{
+  "profileId":1234567890,
+  "countryCode":"US",
+  "currencyCode":"USD",
+  "dailyBudget":10.00,
+  "timezone":"America/Los_Angeles",
+  "accountInfo":{
+  "marketplaceStringId":"ABC123",
+  "sellerStringId":"DEF456"
+}]
+```
+
+### 设置 profileId
+在开始调用业务 API 前，需要预先设置 profileId。
+```
+$app->client->profileId = 1234567890;
+```
+
 ### 模块划分、业务名
 - BaseService        基础通用服务
 - SponsoredBrands    赞助品牌业务（缩写SBrands）
