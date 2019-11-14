@@ -1,6 +1,6 @@
 {
   "name": "mystudytime/amazon-advertising",
-  "description": "Amazon Advertising API Client Library",
+  "description": "Amazon Advertising API v2 Client Library",
   "type": "library",
   "license": "MIT",
   "require": {
@@ -11,9 +11,11 @@
   "keywords": [
     "amazon",
     "Advertising",
+    "Advertising v2",
     "sdk",
     "library",
-    "easyAmazonAdv"
+    "easyAmazonAdv",
+    "v2"
   ],
   "autoload": {
     "psr-4": {
