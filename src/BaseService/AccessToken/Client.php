@@ -13,16 +13,13 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * RefreshToken.
-     *
-     * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
+     * RefreshToken
+     * @return array
      *
      * @author  baihe <b_aihe@163.com>
-     * @date    2019-11-12 15:06
+     * @date    2019-11-14 21:32
      */
-    public function RefreshToken()
+    public function refreshToken()
     {
         return $this->doRefreshToken();
     }

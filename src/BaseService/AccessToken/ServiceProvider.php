@@ -15,7 +15,7 @@ class ServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $pimple)
     {
-        $pimple['accessToken'] = function ($app) {
+        $pimple['access_token'] = function ($app) {
             return new Client($app);
         };
     }
