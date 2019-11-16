@@ -274,7 +274,6 @@ class BaseClient
             $headers['Amazon-Advertising-API-Scope'] = $this->profileId;
         }
 
-//        $path_file = $data['path'] .date('Y').'/'.date('m').'/'.date('d').'/';
         $path_file = $data['path'] . '/report/' . date('Y') . '/' . date('m') . '/' . date('d') . '/';
         if (!is_dir($path_file)) {
             mkdir($path_file, 0755, true);
@@ -285,7 +284,7 @@ class BaseClient
         $client   = new Client();
         $response = $client->request('GET', $this->apiEndpoint . $url, ['headers' => $headers, 'query' => []]);
 
-        if (200 == $response->getStatusCode() && !empty(($report = gzdecode($temp_file)))) {
+        if (200 == $response->getStatusCode() && !empty(($report = $this->read_gz($temp_file)))) {
             $report = \GuzzleHttp\json_decode($report, true);
         } else {
             unlink($temp_file);
@@ -296,5 +295,25 @@ class BaseClient
             'code'     => $response->getStatusCode(),
             'response' => !empty($report) ? $report : [],
         ];
+    }
+
+    /**
+     * read_gz
+     * @param $gz_file
+     * @return string
+     *
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-17 00:10
+     */
+    public function read_gz($gz_file)
+    {
+        $buffer_size = 4096; // read 4kb at a time
+        $file        = gzopen($gz_file, 'rb');
+        $str         = '';
+        while (!gzeof($file)) {
+            $str .= gzread($file, $buffer_size);
+        }
+        gzclose($file);
+        return $str;
     }
 }
