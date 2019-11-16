@@ -279,10 +279,9 @@ class BaseClient
             mkdir($path_file, 0755, true);
         }
         $temp_file          = $path_file . $data['reportId'] . '.gz';
-        $headers['save_to'] = $temp_file;
 
         $client   = new Client();
-        $response = $client->request('GET', $this->apiEndpoint . $url, ['headers' => $headers, 'query' => []]);
+        $response = $client->get($this->apiEndpoint . $url, ['headers' => $headers, 'query' => [], 'save_to' => $temp_file]);
 
         if (200 == $response->getStatusCode() && !empty(($report = $this->read_gz($temp_file)))) {
             $report = \GuzzleHttp\json_decode($report, true);
