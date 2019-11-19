@@ -13,14 +13,11 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * listProfiles.
-     *
-     * @return mixed
-     *
-     * @example [{"profileId":3753569985456409,"countryCode":"US","currencyCode":"USD","dailyBudget":9.99999999E8,"timezone":"America/Los_Angeles","accountInfo":{"marketplaceStringId":"ATVPDKIKX0DER","id":"A2REBULWX98LHD","type":"seller"}},{"profileId":952708443898026,"countryCode":"CA","currencyCode":"CAD","dailyBudget":9.99999999E8,"timezone":"America/Los_Angeles","accountInfo":{"marketplaceStringId":"A2EUQ1WTGCTBG2","id":"A2REBULWX98LHD","type":"seller"}}]
+     * listProfiles
+     * @return array
      *
      * @author  baihe <b_aihe@163.com>
-     * @date    2019-11-12 15:07
+     * @date    2019-11-19 23:49
      */
     public function listProfiles()
     {
