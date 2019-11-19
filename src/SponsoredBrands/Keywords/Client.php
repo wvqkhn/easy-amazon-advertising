@@ -20,7 +20,7 @@ class Client extends BaseClient
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-19 19:44
      */
-    public function listKeywords(array $Keyword)
+    public function listKeywords(array $Keyword = [])
     {
         return $this->httpGet('/sb/keywords', $Keyword);
     }
