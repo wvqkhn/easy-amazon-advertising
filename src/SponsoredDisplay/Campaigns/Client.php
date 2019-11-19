@@ -1,6 +1,6 @@
 <?php
 
-namespace easyAmazonAdv\sdonsoredDisdlay\Campaigns;
+namespace easyAmazonAdv\SponsoredDisplay\Campaigns;
 
 use easyAmazonAdv\Kernel\BaseClient;
 

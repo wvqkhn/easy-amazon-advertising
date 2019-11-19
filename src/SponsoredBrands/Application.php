@@ -20,6 +20,9 @@ class Application extends Container
     protected $providers = [
         ClientServiceProvider::class,
         Report\ServiceProvider::class,
+        Campaigns\ServiceProvider::class,
+        Groups\ServiceProvider::class,
+        Keywords\ServiceProvider::class,
     ];
 
     /**

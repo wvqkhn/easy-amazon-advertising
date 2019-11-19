@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getAdGroup(int $adGroupId)
     {
-        return $this->httpGet('/sp/adGroups/'.$adGroupId);
+        return $this->httpGet('/sd/adGroups/'.$adGroupId);
     }
 
     /**
