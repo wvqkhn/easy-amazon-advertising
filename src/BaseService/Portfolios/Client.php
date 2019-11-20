@@ -13,8 +13,10 @@ use easyAmazonAdv\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * listPortfolios
+     * listPortfolios.
+     *
      * @param array $data
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -26,8 +28,10 @@ class Client extends BaseClient
     }
 
     /**
-     * listPortfoliosEx
+     * listPortfoliosEx.
+     *
      * @param array $data
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -39,8 +43,10 @@ class Client extends BaseClient
     }
 
     /**
-     * getPortfolio
+     * getPortfolio.
+     *
      * @param string $portfolioId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -52,8 +58,10 @@ class Client extends BaseClient
     }
 
     /**
-     * getPortfolioEx
+     * getPortfolioEx.
+     *
      * @param string $portfolioId
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -65,8 +73,10 @@ class Client extends BaseClient
     }
 
     /**
-     * createPortfolios
+     * createPortfolios.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
@@ -78,8 +88,10 @@ class Client extends BaseClient
     }
 
     /**
-     * updatePortfolios
+     * updatePortfolios.
+     *
      * @param array $params
+     *
      * @return array
      *
      * @author  baihe <b_aihe@163.com>
