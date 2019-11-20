@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function listKeywords(array $Keyword = [])
     {
-        return $this->httpGet('/sb/keywords', $Keyword);
+        return $this->httpGet('/sb/keywords', $Keyword, false);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function updateKeywords(array $Keyword)
     {
-        return $this->httpPut('/sb/keywords', $Keyword);
+        return $this->httpPut('/sb/keywords', $Keyword, [], false);
     }
 
     /**
@@ -54,7 +54,7 @@ class Client extends BaseClient
      */
     public function createKeywords(array $Keyword)
     {
-        return $this->httpPost('/sb/keywords', $Keyword);
+        return $this->httpPost('/sb/keywords', $Keyword, [], false);
     }
 
     /**
@@ -69,7 +69,7 @@ class Client extends BaseClient
      */
     public function getKeyword(string $keywordId)
     {
-        return $this->httpGet("/sb/keywords/{$keywordId}");
+        return $this->httpGet("/sb/keywords/{$keywordId}", [], false);
     }
 
     /**
@@ -84,6 +84,6 @@ class Client extends BaseClient
      */
     public function archiveKeyword(string $Keyword)
     {
-        return $this->httpDelete("/sb/keywords/{$Keyword}");
+        return $this->httpDelete("/sb/keywords/{$Keyword}", [], [], false);
     }
 }

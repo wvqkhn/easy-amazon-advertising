@@ -10,7 +10,7 @@ class Client extends BaseClient
      * requestReport.
      *
      * @param string $recordType
-     * @param array  $params
+     * @param array $params
      *
      * @return array
      *
@@ -19,7 +19,7 @@ class Client extends BaseClient
      */
     public function requestReport(string $recordType, array $params)
     {
-        return $this->httpPost("/sd/{$recordType}/report", $params);
+        return $this->httpPost("/sd/{$recordType}/report", $params, [], false);
     }
 
     /**

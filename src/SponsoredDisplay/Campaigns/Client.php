@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getCampaign(int $campaignId)
     {
-        return $this->httpGet('/sd/campaigns/'.$campaignId);
+        return $this->httpGet('/sd/campaigns/' . $campaignId, [], false);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function getCampaignEx(int $campaignId)
     {
-        return $this->httpGet('/sd/campaigns/extended/'.$campaignId);
+        return $this->httpGet('/sd/campaigns/extended/' . $campaignId, [], false);
     }
 
     /**
@@ -54,7 +54,7 @@ class Client extends BaseClient
      */
     public function createCampaigns($params)
     {
-        return $this->httpPost('/sd/campaigns,', $params);
+        return $this->httpPost('/sd/campaigns,', $params, [], false);
     }
 
     /**
@@ -69,7 +69,7 @@ class Client extends BaseClient
      */
     public function updateCampaigns($params)
     {
-        return $this->httpPut('/sd/campaigns,', $params);
+        return $this->httpPut('/sd/campaigns,', $params, [], false);
     }
 
     /**
@@ -84,7 +84,7 @@ class Client extends BaseClient
      */
     public function archiveCampaign(int $campaignId)
     {
-        return $this->httpDelete('/sd/campaigns/'.$campaignId);
+        return $this->httpDelete('/sd/campaigns/' . $campaignId, [], [], false);
     }
 
     /**
@@ -99,7 +99,7 @@ class Client extends BaseClient
      */
     public function listCampaigns(array $params = [])
     {
-        return $this->httpGet('/sd/campaigns', $params);
+        return $this->httpGet('/sd/campaigns', $params, false);
     }
 
     /**
@@ -114,6 +114,6 @@ class Client extends BaseClient
      */
     public function listCampaignsEx(array $params = [])
     {
-        return $this->httpGet('/sd/campaigns/extended', $params);
+        return $this->httpGet('/sd/campaigns/extended', $params, false);
     }
 }

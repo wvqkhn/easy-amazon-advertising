@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getProductAd(int $adId)
     {
-        return $this->httpGet('/sd/productAds/'.$adId);
+        return $this->httpGet('/sd/productAds/' . $adId, [], false);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function getProductAdEx(int $adId)
     {
-        return $this->httpGet('/sd/productAds/extended/'.$adId);
+        return $this->httpGet('/sd/productAds/extended/' . $adId, [], false);
     }
 
     /**
@@ -54,7 +54,7 @@ class Client extends BaseClient
      */
     public function createProductAds(array $products)
     {
-        return $this->httpPost('/sd/productAds', $products);
+        return $this->httpPost('/sd/productAds', $products, [], false);
     }
 
     /**
@@ -69,7 +69,7 @@ class Client extends BaseClient
      */
     public function updateProductAds(array $products)
     {
-        return $this->httpPut('/sd/productAds', $products);
+        return $this->httpPut('/sd/productAds', $products, [], false);
     }
 
     /**
@@ -84,7 +84,7 @@ class Client extends BaseClient
      */
     public function archiveProductAd(int $adId)
     {
-        return $this->httpDelete('/sd/productAds/'.$adId);
+        return $this->httpDelete('/sd/productAds/' . $adId, [], [], false);
     }
 
     /**
@@ -99,7 +99,7 @@ class Client extends BaseClient
      */
     public function listProductAds(array $params = [])
     {
-        return $this->httpGet('/sd/productAds', $params);
+        return $this->httpGet('/sd/productAds', $params, false);
     }
 
     /**
@@ -114,6 +114,6 @@ class Client extends BaseClient
      */
     public function listProductAdsEx(array $params)
     {
-        return $this->httpGet('/sd/productAds/extended', $params);
+        return $this->httpGet('/sd/productAds/extended', $params, false);
     }
 }
