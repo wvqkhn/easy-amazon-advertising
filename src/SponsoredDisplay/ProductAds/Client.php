@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getProductAd(int $adId)
     {
-        return $this->httpGet('/sd/productAds/' . $adId, [], false);
+        return $this->httpGet('/sd/productAds/'.$adId, [], false);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function getProductAdEx(int $adId)
     {
-        return $this->httpGet('/sd/productAds/extended/' . $adId, [], false);
+        return $this->httpGet('/sd/productAds/extended/'.$adId, [], false);
     }
 
     /**
@@ -84,7 +84,7 @@ class Client extends BaseClient
      */
     public function archiveProductAd(int $adId)
     {
-        return $this->httpDelete('/sd/productAds/' . $adId, [], [], false);
+        return $this->httpDelete('/sd/productAds/'.$adId, [], [], false);
     }
 
     /**
