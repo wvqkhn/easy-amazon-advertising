@@ -1,13 +1,5 @@
 <?php
 
-/*
- * This file is part of the overtrue/wechat.
- *
- * (c) overtrue <i@overtrue.me>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
 
 namespace easyAmazonAdv\Kernel\Support;
 
@@ -54,11 +46,12 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * Return specific items.
-     *
+     * only
      * @param array $keys
+     * @return Collection
      *
-     * @return \EasyWeChat\Kernel\Support\Collection
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-24 16:27
      */
     public function only(array $keys)
     {
@@ -90,11 +83,12 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * Merge data.
+     * merge
+     * @param $items
+     * @return Collection
      *
-     * @param Collection|array $items
-     *
-     * @return \EasyWeChat\Kernel\Support\Collection
+     * @author  baihe <b_aihe@163.com>
+     * @date    2019-11-24 16:27
      */
     public function merge($items)
     {
