@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getAdGroup(int $adGroupId)
     {
-        return $this->httpGet('/sd/adGroups/' . $adGroupId, [], false);
+        return $this->httpGet('/sd/adGroups/'.$adGroupId, [], false);
     }
 
     /**
@@ -39,7 +39,7 @@ class Client extends BaseClient
      */
     public function getAdGroupEx(int $adGroupId)
     {
-        return $this->httpGet('/sd/adGroups/extended/' . $adGroupId, [], false);
+        return $this->httpGet('/sd/adGroups/extended/'.$adGroupId, [], false);
     }
 
     /**
@@ -84,7 +84,7 @@ class Client extends BaseClient
      */
     public function archiveAdGroup(int $adGroupId)
     {
-        return $this->httpDelete('/sd/adGroups/' . $adGroupId, [], [], false);
+        return $this->httpDelete('/sd/adGroups/'.$adGroupId, [], [], false);
     }
 
     /**
