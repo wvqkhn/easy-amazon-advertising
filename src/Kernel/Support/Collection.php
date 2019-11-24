@@ -1,6 +1,5 @@
 <?php
 
-
 namespace easyAmazonAdv\Kernel\Support;
 
 use ArrayAccess;
@@ -46,8 +45,10 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * only
+     * only.
+     *
      * @param array $keys
+     *
      * @return Collection
      *
      * @author  baihe <b_aihe@163.com>
@@ -83,8 +84,10 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
-     * merge
+     * merge.
+     *
      * @param $items
+     *
      * @return Collection
      *
      * @author  baihe <b_aihe@163.com>
