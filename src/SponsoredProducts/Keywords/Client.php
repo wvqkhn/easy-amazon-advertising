@@ -328,9 +328,9 @@ class Client extends BaseClient
     }
 
     /**
-     * getAdGroupSuggestedKeywords
+     * getAdGroupSuggestedKeywords.
      *
-     * @param int $adGroupId
+     * @param int   $adGroupId
      * @param array $params
      *
      * @return array
@@ -338,9 +338,9 @@ class Client extends BaseClient
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-29 22:04
      */
-    public function getAdGroupSuggestedKeywords(int $adGroupId,array $params = [])
+    public function getAdGroupSuggestedKeywords(int $adGroupId, array $params = [])
     {
-        return $this->httpGet("/sp/adGroups/{$adGroupId}/suggested/keywords",$params);
+        return $this->httpGet("/sp/adGroups/{$adGroupId}/suggested/keywords", $params);
     }
 
     /**
